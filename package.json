@@ -1,6 +1,7 @@
 {
   "name": "biblioteca",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "directories": {
@@ -13,6 +14,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
     "jest": "^30.1.3"
   }
 }

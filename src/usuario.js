@@ -5,7 +5,7 @@ export class Usuario {
     }
     
     pegarLivro(livro) {
-    if (this.livrosEmprestados.length > 3) {
+    if (this.livrosEmprestados.length >= 3) {
     throw new Error("Usuário já possui o limite de 3 livros!");
     }
     livro.emprestar();
@@ -17,3 +17,5 @@ export class Usuario {
     livro.devolver();
     }
     }
+
+

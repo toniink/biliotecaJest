@@ -9,7 +9,6 @@ export class Livro {
     throw new Error("Livro já emprestado!");
     }
     
-    
     this.disponivel = false;
     }
     
@@ -17,3 +16,4 @@ export class Livro {
     this.disponivel = true;
     }
     }
+
