@@ -70,7 +70,17 @@ describe ('testes classe Usuario', () => {
             expect(()=>usuario.pegarLivro(livro1)).toThrow('Livro já emprestado!');
         });
 
-        
+        it('deve devolver livro especifico e manter os outros', () => {
+            usuario.pegarLivro(livro1);
+            usuario.pegarLivro(livro2);
+            usuario.devolverLivro(livro1);
+
+            expect(usuario.livrosEmprestados).not.toContain(livro1);
+            expect(usuario.livrosEmprestados).toContain(livro2);
+            expect(usuario.livrosEmprestados.length).toBe(1);
+            expect(livro1.disponivel).toBe(true);
+            expect(livro2.disponivel).toBe(false);
+        })
 
     });
 
