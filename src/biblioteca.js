@@ -1,33 +1,38 @@
 import { Livro } from "./livro.js";
 import { Usuario } from "./usuario.js";
 export class Biblioteca {
-constructor() {
-this.usuarios = [];
-this.livros = [];
-}
-cadastrarLivro(titulo) {
-const livro = new Livro(titulo);
-this.livros.push(livro);
-return livro;
-}
-cadastrarUsuario(nome) {
-const usuario = new Usuario(nome);
-this.usuarios.push
+    constructor() {
+        this.usuarios = [];
+        this.livros = [];
+    }
+    cadastrarLivro(titulo) {
+        const livro = new Livro(titulo);
+        this.livros.push(livro);
+        return livro;
+    }
+    cadastrarUsuario(nome) {
+        const usuario = new Usuario(nome);
+        this.usuarios.push(usuario);
 
-(usuario);
+        return usuario;
 
-return usuario
-;
+    }
 
-}
-emprestarLivro
+    emprestarLivro(usuario, livro) {
+        usuario.pegarLivro(livro);
 
-(usuario, livro) {
-usuario.pegarLivro(livro);
-}
-devolverLivro
+    }
 
-(usuario, livro) {
-usuario.devolverLivro(livro);
-}
+    devolverLivro(usuario, livro) {
+
+        usuario.devolverLivro(livro);
+
+    }
+
+    listarLivros() {
+        return this.livros.map(livro => ({
+            titulo: livro.titulo,
+            disponivel: livro.disponivel
+        }));
+    }
 }
